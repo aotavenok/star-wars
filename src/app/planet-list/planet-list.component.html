@@ -1,9 +1,11 @@
 <div class="planet-list">
-  <app-planet-card
+  <app-planet-card 
     *ngFor="let planet of facade.planetList$ | async"
     [name]="planet.name"
     [climate]="planet.climate"
-    [population]="planet.population"
+    [population]="planet.population" 
+    class="planet-list__card"
+    [routerLink]="[getRouterLink(planet.url)]"       
   ></app-planet-card>
 </div>
 <button 

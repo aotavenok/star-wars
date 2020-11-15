@@ -1,0 +1,13 @@
+<section class="planet-page">
+  <app-planet-info [planet]="planet$ | async"></app-planet-info>
+  <ng-container *ngIf="residents$">
+    <h2>Residents</h2>
+    <button 
+      class="planet-page__resident-btn"
+      *ngFor=" let resident of residents$ | async"
+      mat-raised-button 
+    >
+      {{ resident.name }}
+    </button>
+  </ng-container>
+</section>

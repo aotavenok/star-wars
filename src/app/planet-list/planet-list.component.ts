@@ -9,4 +9,8 @@ import { PlanetListService } from '../services/planet-list.service';
 })
 export class PlanetListComponent {
   constructor(public facade: PlanetListService) { }
+
+  getRouterLink(url: string): string {
+    return url.match(/\/planets\/[0-9]{1,}/)[0];
+  }
 }

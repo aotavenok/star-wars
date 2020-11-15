@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { PlanetCounterComponent } from './planet-counter/planet-counter.component';
+import { PlanetPageComponent } from './planet-page/planet-page.component';
+import { PlanetInfoComponent } from './planet-info/planet-info.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { PlanetCounterComponent } from './planet-counter/planet-counter.componen
     MainPageComponent,
     PlanetListComponent,
     PlanetCardComponent,
-    PlanetCounterComponent
+    PlanetCounterComponent,
+    PlanetPageComponent,
+    PlanetInfoComponent
   ],
   imports: [
     BrowserModule,

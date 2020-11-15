@@ -1,4 +1,8 @@
 .planet-list {
   display: flex;
   flex-wrap: wrap;
+  
+  &__card {
+    cursor: pointer;
+  }
 }
