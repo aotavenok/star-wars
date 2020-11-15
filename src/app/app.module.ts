@@ -11,13 +11,15 @@ import { PlanetCardComponent } from './planet-card/planet-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
+import { PlanetCounterComponent } from './planet-counter/planet-counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     PlanetListComponent,
-    PlanetCardComponent
+    PlanetCardComponent,
+    PlanetCounterComponent
   ],
   imports: [
     BrowserModule,

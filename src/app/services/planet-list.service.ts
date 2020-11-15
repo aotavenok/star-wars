@@ -12,6 +12,7 @@ export class PlanetListService {
   private _page = 0;
   private _planetList$ = new BehaviorSubject<Planet[]>([]);
   private _isMorePlanets$ = new BehaviorSubject<boolean>(false);
+  private _planetCount$ = new BehaviorSubject<number>(0);
 
   constructor(
     private _swapiService: SwapiService,
@@ -36,9 +37,11 @@ export class PlanetListService {
       )
       .subscribe(({ results, count }: PlanetListResponse) => {
         const newPlanetList = this._planetList$.value.concat(results);
-        const isMorePlanets =  newPlanetList.length !== count;
+        const newPlanetCount = newPlanetList.length;
+        const isMorePlanets =  newPlanetCount !== count;
 
         this._planetList$.next(newPlanetList);
+        this._planetCount$.next(newPlanetCount);
         this._isMorePlanets$.next(isMorePlanets);
       });
   }
@@ -49,5 +52,9 @@ export class PlanetListService {
 
   get isMorePlanets$(): Observable<boolean> {
     return this._isMorePlanets$.asObservable();
+  }
+
+  get planetCount$(): Observable<number> {
+    return this._planetCount$.asObservable();
   }
 }
