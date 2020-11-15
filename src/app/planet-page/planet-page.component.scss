@@ -3,5 +3,10 @@
 
   &__resident-btn {
     margin: 10px;
+
+    &--selected {
+      color: #ffffff;
+      background-color: #673ab7;
+    }
   }
 }

@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PlanetCounterComponent } from './planet-counter/planet-counter.component';
 import { PlanetPageComponent } from './planet-page/planet-page.component';
 import { PlanetInfoComponent } from './planet-info/planet-info.component';
+import { ResidentInfoComponent } from './resident-info/resident-info.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PlanetInfoComponent } from './planet-info/planet-info.component';
     PlanetCardComponent,
     PlanetCounterComponent,
     PlanetPageComponent,
-    PlanetInfoComponent
+    PlanetInfoComponent,
+    ResidentInfoComponent
   ],
   imports: [
     BrowserModule,

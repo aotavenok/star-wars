@@ -16,6 +16,7 @@ import { SwapiService } from '../services/swapi.service';
 export class PlanetPageComponent implements OnInit {
   planet$: Observable<Planet>;
   residents$: Observable<Resident[]>;
+  selectedResident: Resident;
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _swapiService: SwapiService,

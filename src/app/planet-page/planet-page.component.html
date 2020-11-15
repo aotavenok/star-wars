@@ -6,8 +6,14 @@
       class="planet-page__resident-btn"
       *ngFor=" let resident of residents$ | async"
       mat-raised-button 
+      (click)="selectedResident = resident"
+      [class.planet-page__resident-btn--selected]="selectedResident?.url === resident.url"
     >
       {{ resident.name }}
     </button>
+    <app-resident-info 
+      *ngIf="selectedResident"
+      [resident]="selectedResident"
+    ></app-resident-info>
   </ng-container>
 </section>
