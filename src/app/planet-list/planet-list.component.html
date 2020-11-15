@@ -1,8 +1,15 @@
 <div class="planet-list">
   <app-planet-card
-    *ngFor="let planet of planetList$ | async"
+    *ngFor="let planet of facade.planetList$ | async"
     [name]="planet.name"
     [climate]="planet.climate"
     [population]="planet.population"
   ></app-planet-card>
 </div>
+<button 
+  *ngIf="(facade.isMorePlanets$ | async)"
+  mat-raised-button color="primary"
+  (click)="facade.getPlanets()"
+>
+  Load More
+</button>

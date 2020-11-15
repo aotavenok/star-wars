@@ -13,7 +13,10 @@ export class SwapiService {
     private _http: HttpClient
   ) { }
 
-  getPlanets(): Observable<PlanetListResponse> {
-    return this._http.get<PlanetListResponse>(`${environment.swapi}planets/`);
+  getPlanets(page: number): Observable<PlanetListResponse> {
+    const params = {
+      page: page.toString()
+    };
+    return this._http.get<PlanetListResponse>(`${environment.swapi}planets/`, { params });
   }
 }
